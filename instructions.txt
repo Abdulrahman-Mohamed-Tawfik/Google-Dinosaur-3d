@@ -1,0 +1,4 @@
+control gravity:
+Edit>>project settings>>gravity(y)=-25
+
+
