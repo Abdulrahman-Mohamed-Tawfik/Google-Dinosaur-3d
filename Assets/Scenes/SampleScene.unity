@@ -512,6 +512,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5798073916322266864, guid: 58ac8518cecc3a440a5f5f821328a50b, type: 3}
+      propertyPath: RunSpeed
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798073916322266864, guid: 58ac8518cecc3a440a5f5f821328a50b, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 1987468487}
+    - target: {fileID: 5798073916322266864, guid: 58ac8518cecc3a440a5f5f821328a50b, type: 3}
+      propertyPath: FWDAndLRSpeed
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798073916322266864, guid: 58ac8518cecc3a440a5f5f821328a50b, type: 3}
+      propertyPath: HorizontalSpeed
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798073916322266864, guid: 58ac8518cecc3a440a5f5f821328a50b, type: 3}
+      propertyPath: speedIncreaseRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5798073916322266864, guid: 58ac8518cecc3a440a5f5f821328a50b, type: 3}
+      propertyPath: Run_and_move_Speed
+      value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 7027052169316591770, guid: 58ac8518cecc3a440a5f5f821328a50b, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e0ee2a6aa2a6e5e43aa54360f294793d, type: 2}
     - target: {fileID: 7996303547487776837, guid: 58ac8518cecc3a440a5f5f821328a50b, type: 3}
       propertyPath: m_Name
       value: Dino 1
@@ -1347,6 +1375,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1849432705}
   m_LocalEulerAnglesHint: {x: 24, y: 48, z: -5}
+--- !u!95 &1987468487 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7027052169316591770, guid: 58ac8518cecc3a440a5f5f821328a50b, type: 3}
+  m_PrefabInstance: {fileID: 528883757}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2106348421
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class CameraScript : MonoBehaviour
@@ -10,26 +11,29 @@ public class CameraScript : MonoBehaviour
     public GameObject Camera3;
     public GameObject Camera4;
 
-
+    void Start()
+    {
+        CameraOne();
+    }
     void Update()
     {
         if (Input.GetKeyDown("1"))
         {
-            CameraOne ();
+            CameraOne();
         }
 
         if (Input.GetKeyDown("2"))
         {
-            CameraTwo ();
+            CameraTwo();
         }
 
         if (Input.GetKeyDown("3"))
         {
-            CameraThree ();
+            CameraThree();
         }
         if (Input.GetKeyDown("4"))
         {
-            CameraFour ();
+            CameraFour();
         }
     }
 
@@ -46,21 +50,21 @@ public class CameraScript : MonoBehaviour
         Camera4.SetActive(false);
         Camera3.SetActive(false);
         Camera2.SetActive(true);
-        Camera1.SetActive(false);  
+        Camera1.SetActive(false);
     }
 
     void CameraThree()
     {
         Camera4.SetActive(false);
         Camera3.SetActive(true);
-        Camera2.SetActive(false);  
+        Camera2.SetActive(false);
         Camera1.SetActive(false);
     }
     void CameraFour()
     {
         Camera4.SetActive(true);
         Camera3.SetActive(false);
-        Camera2.SetActive(false);  
+        Camera2.SetActive(false);
         Camera1.SetActive(false);
     }
 }
