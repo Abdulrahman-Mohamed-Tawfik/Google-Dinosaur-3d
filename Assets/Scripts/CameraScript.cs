@@ -10,6 +10,7 @@ public class CameraScript : MonoBehaviour
     public GameObject Camera2;
     public GameObject Camera3;
     public GameObject Camera4;
+    public GameObject Camera5;
 
     void Start()
     {
@@ -43,6 +44,7 @@ public class CameraScript : MonoBehaviour
         Camera2.SetActive(false);
         Camera3.SetActive(false);
         Camera4.SetActive(false);
+        Camera5.SetActive(false);
     }
 
     void CameraTwo()
