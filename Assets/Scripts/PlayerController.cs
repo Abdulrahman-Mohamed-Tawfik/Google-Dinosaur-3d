@@ -11,7 +11,7 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded;
     public float FWDAndLRSpeed = -30;
     public float speedIncreaseRate = 1.0f; // Rate at which speed increases
-    public float RunAnimSpeed = 1.6f;
+    public float RunAnimSpeed = 1.5f;
     public float JumpAnimSpeed = 2;
     public long Score;
     public Rigidbody rb;
@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
 
     float horizontalInput;
     [SerializeField] private Animator animator;
-    string[] deadlyObjects = { "Cactus1", "Cactus2", "ShaneR", "SahneL", "DragonMesh" };
+    string[] deadlyObjects = { "Cactus1", "Cactus2", "ShaneR", "SahneL","ptera_LOD_0", "DragonMesh" };
     public TextMeshProUGUI scoreTextMesh;
     private void Awake()
     {

@@ -336,7 +336,7 @@ MonoBehaviour:
   obstaclePrefabs:
   - {fileID: 3472261946530932418, guid: 47773b7251b81af42bd69f595f5f7163, type: 3}
   - {fileID: 7756126667362608433, guid: efb226202f9e3c446b48d7bd1fd8405d, type: 3}
-  - {fileID: 6947788316570426892, guid: 5af6a10c7bb3f8c47ab48f10e307a06d, type: 3}
+  - {fileID: 4889404002906039260, guid: 47cf5351f60d56d40ad9a7df8190fdbf, type: 3}
   spawnpoints:
   - {fileID: 229936116387315277}
   - {fileID: 5923665828661011874}
@@ -348,7 +348,6 @@ MonoBehaviour:
   - {fileID: 4679082495305646291}
   - {fileID: 2247833792840690807}
   - {fileID: 9016550592294656275}
-  Dino1: {fileID: 7996303547487776837, guid: 58ac8518cecc3a440a5f5f821328a50b, type: 3}
 --- !u!1 &5595812785650006470
 GameObject:
   m_ObjectHideFlags: 0
