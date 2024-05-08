@@ -6,6 +6,7 @@ public class GroundTile : MonoBehaviour
 {
     private GroundSpawner groundspawner;
     private PlayerController playerController; // Reference to the PlayerController script
+    public GameObject coinprefab;
 
     public GameObject[] obstaclePrefabs;
     public Transform[] spawnpoints;
@@ -20,6 +21,7 @@ public class GroundTile : MonoBehaviour
     void Start()
     {
         Spawnobs();
+        Spawncoin();
     }
 
     private void OnTriggerExit(Collider other)
@@ -52,5 +54,21 @@ public class GroundTile : MonoBehaviour
             Quaternion rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
             Instantiate(obstaclePrefabs[DragonSpawnPrefab], spawnpoints[ChooseDragonSpawnPoint].transform.position, rotation);
         }
+    }
+    public void Spawncoin()
+    {
+        int spawnamount = 5;
+        for (int i = 0; i < spawnamount; i++)
+        {
+            GameObject tempcoin = Instantiate(original: coinprefab);
+            tempcoin.transform.position = SpawnRandomPoint(GetComponent<Collider>());
+
+        }
+    }
+    Vector3 SpawnRandomPoint(Collider x)
+    {
+        Vector3 point = new Vector3(Random.Range(x.bounds.min.x, x.bounds.max.x), Random.Range(x.bounds.min.y, x.bounds.max.y), Random.Range(x.bounds.min.z, x.bounds.max.z));
+        point.y = 7;
+        return point;
     }
 }

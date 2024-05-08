@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public float JumpAnimSpeed = 2;
     public long Score;
     public Rigidbody rb;
+    public AudioSource audioplayer;
 
 
     float horizontalInput;
@@ -48,7 +49,7 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         // float playerHeight = GetComponent<Collider>().bounds.size.y;
         // bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (playerHeight / 2) + 0.1f, GroundMask);
-        Score = (long)Mathf.Abs(FWDAndLRSpeed) - 30;
+       // Score = (long)Mathf.Abs(FWDAndLRSpeed) - 30;
         // Debug.Log(isGrounded);
         // Debug.Log("Move Speed: " + Mathf.Abs(Run_and_move_Speed));
         // Debug.Log("Score: " + Score);
@@ -77,6 +78,15 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter(Collision collisioninfo)
     {
+        if (collisioninfo.gameObject.name.Contains("coin"))
+        {
+            Destroy(collisioninfo.gameObject);
+            Score += 1;
+           
+        }
+
+
+
         if (collisioninfo.collider.name == "Ground")
         {
             isGrounded = true;

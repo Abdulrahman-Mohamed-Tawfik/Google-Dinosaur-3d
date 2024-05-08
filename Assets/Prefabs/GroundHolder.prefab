@@ -333,6 +333,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6b1f0afa21ad9424b9ba0ac45e3c19fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coinprefab: {fileID: 212964212181419713, guid: 8557c673beb97424fa92cb09c6966e2c, type: 3}
   obstaclePrefabs:
   - {fileID: 3472261946530932418, guid: 47773b7251b81af42bd69f595f5f7163, type: 3}
   - {fileID: 7756126667362608433, guid: efb226202f9e3c446b48d7bd1fd8405d, type: 3}
