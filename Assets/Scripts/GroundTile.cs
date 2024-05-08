@@ -44,7 +44,7 @@ public class GroundTile : MonoBehaviour
         Instantiate(obstaclePrefabs[SpawnPrefab], spawnpoints[ChooseSpawnPoint].transform.position, Quaternion.identity, transform);
 
         // Accessing the Score variable from PlayerController
-        long score = playerController.Score;
+        long score = playerController.CoinScore;
         // Debug.Log("Score from PlayerController: " + score);
         if (score % 5 == 0 && score != 0)
         {

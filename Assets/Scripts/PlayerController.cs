@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     public float speedIncreaseRate = 1.0f; // Rate at which speed increases
     public float RunAnimSpeed = 1.5f;
     public float JumpAnimSpeed = 2;
+    public long CoinScore;
     public long Score;
     public Rigidbody rb;
     public AudioSource audioplayer;
@@ -20,12 +21,13 @@ public class PlayerController : MonoBehaviour
 
     float horizontalInput;
     [SerializeField] private Animator animator;
-    string[] deadlyObjects = { "Cactus1", "Cactus2", "ShaneR", "SahneL","ptera_LOD_0", "DragonMesh" };
+    string[] deadlyObjects = { "Cactus1", "Cactus2", "ShaneR", "SahneL", "ptera_LOD_0", "DragonMesh" };
     public TextMeshProUGUI scoreTextMesh;
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         // scoreTextMesh = GetComponent<TextMeshProUGUI>();
+        CoinScore = 0;
         Score = 0;
         // animator = GetComponent<Animator>();
     }
@@ -49,11 +51,11 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");
         // float playerHeight = GetComponent<Collider>().bounds.size.y;
         // bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (playerHeight / 2) + 0.1f, GroundMask);
-       // Score = (long)Mathf.Abs(FWDAndLRSpeed) - 30;
+        Score = (long)Mathf.Abs(FWDAndLRSpeed) - 30;
         // Debug.Log(isGrounded);
         // Debug.Log("Move Speed: " + Mathf.Abs(Run_and_move_Speed));
         // Debug.Log("Score: " + Score);
-        scoreTextMesh.text = ("Score: " + Score);
+        scoreTextMesh.text = ("Distance: " + Score + "\nScore: " + CoinScore);
 
         if (Mathf.Abs(FWDAndLRSpeed) % 50 == 0)
         {
@@ -72,7 +74,7 @@ public class PlayerController : MonoBehaviour
     }
     private void Jump()
     {
-        animator.Play("jumb");
+        animator.Play("jump");
         isGrounded = false;
     }
 
@@ -81,8 +83,8 @@ public class PlayerController : MonoBehaviour
         if (collisioninfo.gameObject.name.Contains("coin"))
         {
             Destroy(collisioninfo.gameObject);
-            Score += 1;
-           
+            CoinScore += 1;
+
         }
 
 
