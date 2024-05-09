@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
 
     float horizontalInput;
     [SerializeField] private Animator animator;
-    string[] deadlyObjects = { "Cactus1", "Cactus2", "ShaneR", "SahneL", "ptera_LOD_0", "DragonMesh" };
+    string[] deadlyObjects = { "Cactus1", "Cactus2", "SideL", "SideR", "ptera_LOD_0" };
     public TextMeshProUGUI scoreTextMesh;
     private void Awake()
     {
@@ -68,17 +68,20 @@ public class PlayerController : MonoBehaviour
             JumpAnimSpeed += 0.2f;
         }
 
-        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow)) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.UpArrow))
         {
             Jump();
             // rb.AddForce(Physics.gravity * (gravityScale - 1) * rb.mass);
-            Debug.Log("jumped");
+            // Debug.Log("jumped");
         }
     }
     private void Jump()
     {
-        animator.Play("jump");
-        isGrounded = false;
+        if (isAlive && isGrounded)
+        {
+            animator.Play("jump");
+            isGrounded = false;
+        }
     }
 
     private void OnCollisionEnter(Collision collisioninfo)
@@ -95,6 +98,10 @@ public class PlayerController : MonoBehaviour
         if (collisioninfo.collider.name == "Ground")
         {
             isGrounded = true;
+        }
+        if (collisioninfo.collider.name.StartsWith("Cactus")||collisioninfo.collider.name.StartsWith("Rock"))
+        {
+            Dead();
         }
         foreach (string deadlyObjectName in deadlyObjects)
         {

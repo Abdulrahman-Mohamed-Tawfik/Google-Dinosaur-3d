@@ -10,6 +10,7 @@ public class GroundTile : MonoBehaviour
 
     public GameObject[] obstaclePrefabs;
     public Transform[] spawnpoints;
+    private int FlySpawnPointsCount = 3;
 
     private void Awake()
     {
@@ -26,7 +27,7 @@ public class GroundTile : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        groundspawner.SpawnTile();
+        groundspawner.SpawnRandomGround();
         Destroy(gameObject, 5f);
     }
 
@@ -38,8 +39,8 @@ public class GroundTile : MonoBehaviour
 
     public void Spawnobs()
     {
-        int ChooseSpawnPoint = Random.Range(0, spawnpoints.Length - 3);
-        int SpawnPrefab = Random.Range(0, obstaclePrefabs.Length - 1);
+        int ChooseSpawnPoint = Random.Range(0, spawnpoints.Length - FlySpawnPointsCount);
+        int SpawnPrefab = Random.Range(0, obstaclePrefabs.Length );//can get error (add -1)
 
         Instantiate(obstaclePrefabs[SpawnPrefab], spawnpoints[ChooseSpawnPoint].transform.position, Quaternion.identity, transform);
 
@@ -48,16 +49,16 @@ public class GroundTile : MonoBehaviour
         // Debug.Log("Score from PlayerController: " + score);
         if (score % 5 == 0 && score != 0)
         {
-            int ChooseDragonSpawnPoint = Random.Range(7, spawnpoints.Length - 1);//
-            int DragonSpawnPrefab = obstaclePrefabs.Length - 1;
+            int ChooseFlySpawnPoint = Random.Range(7, spawnpoints.Length - 1);
+            int FlySpawnPrefab = obstaclePrefabs.Length - 1;
 
             Quaternion rotation = Quaternion.Euler(new Vector3(0f, 180f, 0f));
-            Instantiate(obstaclePrefabs[DragonSpawnPrefab], spawnpoints[ChooseDragonSpawnPoint].transform.position, rotation);
+            Instantiate(obstaclePrefabs[FlySpawnPrefab], spawnpoints[ChooseFlySpawnPoint].transform.position, rotation);
         }
     }
     public void Spawncoin()
     {
-        int spawnamount = 5;
+        int spawnamount = 3;
         for (int i = 0; i < spawnamount; i++)
         {
             GameObject tempcoin = Instantiate(original: coinprefab);
