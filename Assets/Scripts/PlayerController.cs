@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
     public float RunAnimSpeed = 1.5f;
     public float JumpAnimSpeed = 2;
     public long CoinScore;
-    public long Score;
+    private long Score;
+    private long HIScore = 0;
     public Rigidbody rb;
     public AudioSource audioplayer;
 
@@ -29,6 +30,8 @@ public class PlayerController : MonoBehaviour
         // scoreTextMesh = GetComponent<TextMeshProUGUI>();
         CoinScore = 0;
         Score = 0;
+        HIScore = PlayerPrefs.GetInt("HIScore");
+        // HIScore = 0;
         // animator = GetComponent<Animator>();
     }
 
@@ -55,7 +58,7 @@ public class PlayerController : MonoBehaviour
         // Debug.Log(isGrounded);
         // Debug.Log("Move Speed: " + Mathf.Abs(Run_and_move_Speed));
         // Debug.Log("Score: " + Score);
-        scoreTextMesh.text = ("Distance: " + Score + "\nScore: " + CoinScore);
+        scoreTextMesh.text = ("HI " + HIScore + " " + Score + " $ " + CoinScore);
 
         if (Mathf.Abs(FWDAndLRSpeed) % 50 == 0)
         {
@@ -108,6 +111,12 @@ public class PlayerController : MonoBehaviour
     {
         animator.Play("die1");
         isAlive = false;
+
+        if (Score > PlayerPrefs.GetInt("HIScore"))
+        {
+            HIScore = Score;
+            PlayerPrefs.SetInt("HIScore", (int)HIScore);
+        }
         GameManager.MyInstance.GameOverPanel.SetActive(true);
     }
 }
