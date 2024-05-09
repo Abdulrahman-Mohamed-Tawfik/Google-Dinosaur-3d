@@ -1,59 +1,33 @@
-Library
-library
-Temp
-temp
-Obj
-obj
-Build
-build
-Builds
-builds
-UserSettings
-usersettings
-MemoryCaptures
-memorycaptures
-Logs
-logs
-/ignore.conf
-*.private
-*.private.meta
-^*.private.[0-9]+$
-^*.private.[0-9]+.meta$
-**/Assets/AssetStoreTools
-**/assets/assetstoretools
-/Assets/Plugins/PlasticSCM*
-/assets/plugins/PlasticSCM*
-.vs
-.gradle
-ExportedObj
-.consulo
+# =============== #
+# Unity generated #
+# =============== #
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Ll]ibrary/
+
+# ===================================== #
+# Visual Studio / MonoDevelop generated #
+# ===================================== #
+[Ee]xported[Oo]bj/
+.vs/
+.vscode/
+*.sln
 *.csproj
 *.unityproj
-*.sln
+*.sln.DotSettings
 *.suo
-*.tmp
 *.user
 *.userprefs
 *.pidb
 *.booproj
-*.svd
-*.pdb
-*.mdb
-*.opendb
-*.VC.db
-*.pidb.meta
-*.pdb.meta
-*.mdb.meta
-sysinfo.txt
-*.apk
-*.unitypackage
-.collabignore
-~UnityDirMonSyncFile~*
-crashlytics-build.properties
-**/Assets/AddressableAssetsData/*/*.bin*
-**/assets/addressableassetsdata/*/*.bin*
-**/Assets/StreamingAssets/aa.meta
-**/assets/streamingassets/*/aa/*
+
+# ============ #
+# OS generated #
+# ============ #
 .DS_Store*
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
 Thumbs.db
-Desktop.ini
