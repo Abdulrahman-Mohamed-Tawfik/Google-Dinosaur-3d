@@ -17,7 +17,8 @@ public class PlayerController : MonoBehaviour
     private long Score;
     private long HIScore = 0;
     public Rigidbody rb;
-    public AudioSource audioplayer;
+    public AudioSource src;
+    public AudioClip sfxjump , sfxcoin , sfxdie;
 
 
     float horizontalInput;
@@ -80,7 +81,11 @@ public class PlayerController : MonoBehaviour
         if (isAlive && isGrounded)
         {
             animator.Play("jump");
+            src.clip = sfxjump;
+            src.Play();
             isGrounded = false;
+            
+            
         }
     }
 
@@ -90,6 +95,8 @@ public class PlayerController : MonoBehaviour
         {
             Destroy(collisioninfo.gameObject);
             CoinScore += 1;
+            src.clip = sfxcoin;
+            src.Play();
 
         }
 
@@ -98,16 +105,23 @@ public class PlayerController : MonoBehaviour
         if (collisioninfo.collider.name == "Ground")
         {
             isGrounded = true;
+            
         }
         if (collisioninfo.collider.name.StartsWith("Cactus")||collisioninfo.collider.name.StartsWith("Rock"))
         {
+            src.clip = sfxdie;
+            src.Play();
             Dead();
+            
         }
         foreach (string deadlyObjectName in deadlyObjects)
         {
             if (collisioninfo.collider.name == deadlyObjectName)
             {
+                src.clip = sfxdie;
+                src.Play();
                 Dead();
+               
                 break; // Exit the loop once a deadly object is found
             }
         }
