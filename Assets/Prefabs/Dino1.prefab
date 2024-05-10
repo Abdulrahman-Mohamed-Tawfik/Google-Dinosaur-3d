@@ -3789,7 +3789,7 @@ GameObject:
   - component: {fileID: 5798073916322266864}
   - component: {fileID: 1299837535941345982}
   m_Layer: 0
-  m_Name: Dino 1
+  m_Name: Dino1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

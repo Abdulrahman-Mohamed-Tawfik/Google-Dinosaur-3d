@@ -408,7 +408,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 389534114026558828}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac26f0b449e7e1a45877aaa0edbf03d8, type: 3}
   m_Name: 
@@ -422,7 +422,10 @@ MonoBehaviour:
   JumpAnimSpeed: 1
   CoinScore: 0
   rb: {fileID: 3551797342324932589}
-  audioplayer: {fileID: 0}
+  src: {fileID: 0}
+  sfxjump: {fileID: 0}
+  sfxcoin: {fileID: 0}
+  sfxdie: {fileID: 0}
   animator: {fileID: 1759571401240240093}
   scoreTextMesh: {fileID: 0}
 --- !u!1 &450387388194915291

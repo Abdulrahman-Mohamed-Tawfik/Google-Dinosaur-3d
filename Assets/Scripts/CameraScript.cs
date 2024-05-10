@@ -36,19 +36,24 @@ public class CameraScript : MonoBehaviour
         {
             CameraFour();
         }
+        if (Input.GetKeyDown("5"))
+        {
+            CameraFive();
+        }
     }
 
     void CameraOne()
     {
-        Camera1.SetActive(true);
-        Camera2.SetActive(false);
-        Camera3.SetActive(false);
-        Camera4.SetActive(false);
         Camera5.SetActive(false);
+        Camera4.SetActive(false);
+        Camera3.SetActive(false);
+        Camera2.SetActive(false);
+        Camera1.SetActive(true);
     }
 
     void CameraTwo()
     {
+        Camera5.SetActive(false);
         Camera4.SetActive(false);
         Camera3.SetActive(false);
         Camera2.SetActive(true);
@@ -57,6 +62,7 @@ public class CameraScript : MonoBehaviour
 
     void CameraThree()
     {
+        Camera5.SetActive(false);
         Camera4.SetActive(false);
         Camera3.SetActive(true);
         Camera2.SetActive(false);
@@ -64,7 +70,16 @@ public class CameraScript : MonoBehaviour
     }
     void CameraFour()
     {
+        Camera5.SetActive(false);
         Camera4.SetActive(true);
+        Camera3.SetActive(false);
+        Camera2.SetActive(false);
+        Camera1.SetActive(false);
+    }
+    void CameraFive()
+    {
+        Camera5.SetActive(true);
+        Camera4.SetActive(false);
         Camera3.SetActive(false);
         Camera2.SetActive(false);
         Camera1.SetActive(false);

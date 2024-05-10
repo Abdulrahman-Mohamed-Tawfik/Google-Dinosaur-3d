@@ -1,7 +1,10 @@
 fileFormatVersion: 2
-guid: 988c53f5500108f4a9e35c9db3278e43
-PrefabImporter:
+guid: 4ce3156723969ae428889d6dd2a19cd5
+labels:
+- rock
+NativeFormatImporter:
   externalObjects: {}
+  mainObjectFileID: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

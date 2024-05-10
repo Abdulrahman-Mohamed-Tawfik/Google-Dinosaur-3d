@@ -350,6 +350,7 @@ MonoBehaviour:
   - {fileID: 100000, guid: 460c985abbd459b40a6554e606202d00, type: 3}
   - {fileID: 100000, guid: 8c594ad48c4201c4589acbe2ce2cc8c0, type: 3}
   - {fileID: 100000, guid: aff966e5025eb394f9474186cecbb30d, type: 3}
+  FlyPrefabs:
   - {fileID: 4889404002906039260, guid: 47cf5351f60d56d40ad9a7df8190fdbf, type: 3}
   spawnpoints:
   - {fileID: 326652404897765955}
@@ -359,6 +360,7 @@ MonoBehaviour:
   - {fileID: 3216614910071883520}
   - {fileID: 1483480879542894805}
   - {fileID: 321603386127225696}
+  Flyspawnpoints:
   - {fileID: 2720190097079807920}
   - {fileID: 5453980939855024045}
   - {fileID: 7762616792069034533}

@@ -14,16 +14,16 @@ public class PlayerController : MonoBehaviour
     public float RunAnimSpeed = 1.5f;
     public float JumpAnimSpeed = 2;
     public long CoinScore;
-    private long Score;
+    public long Score;
     private long HIScore = 0;
     public Rigidbody rb;
     public AudioSource src;
-    public AudioClip sfxjump , sfxcoin , sfxdie;
+    public AudioClip sfxjump, sfxcoin, sfxdie;
 
 
     float horizontalInput;
     [SerializeField] private Animator animator;
-    string[] deadlyObjects = { "Cactus1", "Cactus2", "SideL", "SideR", "ptera_LOD_0" };
+    string[] deadlyObjects = { "Cactus1", "Cactus2", "SideL", "SideR", "ptera_LOD_0", "Projectile(Clone)" };
     public TextMeshProUGUI scoreTextMesh;
     private void Awake()
     {
@@ -84,8 +84,6 @@ public class PlayerController : MonoBehaviour
             src.clip = sfxjump;
             src.Play();
             isGrounded = false;
-            
-            
         }
     }
 
@@ -105,23 +103,25 @@ public class PlayerController : MonoBehaviour
         if (collisioninfo.collider.name == "Ground")
         {
             isGrounded = true;
-            
+
         }
-        if (collisioninfo.collider.name.StartsWith("Cactus")||collisioninfo.collider.name.StartsWith("Rock"))
+        if (collisioninfo.collider.name.StartsWith("Cactus") || collisioninfo.collider.name.StartsWith("Rock"))
         {
-            src.clip = sfxdie;
-            src.Play();
-            Dead();
-            
-        }
-        foreach (string deadlyObjectName in deadlyObjects)
-        {
-            if (collisioninfo.collider.name == deadlyObjectName)
+            if (isAlive)
             {
                 src.clip = sfxdie;
                 src.Play();
                 Dead();
-               
+            }
+        }
+        foreach (string deadlyObjectName in deadlyObjects)
+        {
+            if (collisioninfo.collider.name == deadlyObjectName && isAlive)
+            {
+                src.clip = sfxdie;
+                src.Play();
+                Dead();
+
                 break; // Exit the loop once a deadly object is found
             }
         }
